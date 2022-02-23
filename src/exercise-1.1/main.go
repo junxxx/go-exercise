@@ -4,13 +4,19 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 )
 
 func main() {
-	// os.Args is slice
-	for i, v := range os.Args {
-		fmt.Println("index", i, "value ", v)
+	begin := time.Now()
+	s, sep := "", ""
+	for _, arg := range os.Args[1:] {
+		s += sep + arg
+		sep = " "
 	}
+	fmt.Printf("runtime : %d ns\n", time.Since(begin).Nanoseconds())
 
-	strings.Join(os.Args, " ")
+	start := time.Now()
+	strings.Join(os.Args[1:], " ")
+	fmt.Printf("lib runtime : %d ns\n", time.Since(start).Nanoseconds())
 }
