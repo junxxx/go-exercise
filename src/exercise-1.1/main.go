@@ -5,6 +5,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"github.com/junxxx/go-exercise/1.1/dup"
 )
 
 func main() {
@@ -19,4 +21,5 @@ func main() {
 	start := time.Now()
 	strings.Join(os.Args[1:], " ")
 	fmt.Printf("lib runtime : %d ns\n", time.Since(start).Nanoseconds())
+	dup.Dup()
 }

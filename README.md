@@ -6,3 +6,5 @@
 1.2 Modify the `echo` program to print the index and value of each of its arguments, one per line.
 
 1.3 Experiment to measure the difference in running time between our potentially inefficient versions and the one that uses `strings.Join`
+
+1.4 Modify `dup2` to print the names of all files in which each duplicated line occurs
