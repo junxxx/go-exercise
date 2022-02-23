@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/junxxx/go-exercise/1.1/dup"
+	http "github.com/junxxx/go-exercise/1.1/http"
 )
 
 func main() {
@@ -21,5 +21,8 @@ func main() {
 	start := time.Now()
 	strings.Join(os.Args[1:], " ")
 	fmt.Printf("lib runtime : %d ns\n", time.Since(start).Nanoseconds())
-	dup.Dup()
+	// dup.Dup()
+	for _, url := range os.Args[1:] {
+		http.Get(url)
+	}
 }
